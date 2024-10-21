@@ -152,8 +152,10 @@ let handleNext = ()=>{
         left: 0,
         behavior: 'smooth' 
       });
-    pages[pageNo-1].classList.remove("active");
+    if(pageNo < pageCount){
+        pages[pageNo-1].classList.remove("active");
     pageNo+=1;
+    }
     showRecipes(modifyData(pageNo));
 }
 
@@ -165,8 +167,10 @@ let handlePrevious = ()=>{
         left: 0,
         behavior: 'smooth' 
       });
-      pages[pageNo-1].classList.remove("active");
+      if(pageNo>1){
+          pages[pageNo-1].classList.remove("active");
     pageNo-=1;
+      }
     showRecipes(modifyData(pageNo));
 }
 
